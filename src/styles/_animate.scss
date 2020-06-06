@@ -1,0 +1,130 @@
+/////// for vanilla
+.slice-anime {
+    box-shadow: 0 0 14px -2px;
+    animation: slice 1.55s ease-out 1;
+}
+
+@keyframes slice {
+    from {
+        margin-top: -275px;
+        transform: rotate(110deg);
+        box-shadow: none;
+    }
+    to {
+        margin-top: 0;
+        transform: rotate(0deg);
+        box-shadow: 0 0 14px -2px;
+    }
+}
+
+/////// for text
+.flash-anime {
+    text-shadow: 
+                0 0 3px white, 
+                0 0 5px white, 
+                0 0 8px white, 
+                0 0 10px $color-disc-shadow, 
+                0 0 18px $color-disc-shadow, 
+                0 0 20px $color-disc-shadow, 
+                0 0 25px $color-disc-shadow, 
+                0 0 38px $color-disc-shadow;
+    animation: flash 1.75s ease-out 1;
+    animation-delay: .6s;
+}
+
+.isvisible {
+    visibility: visible;
+}
+
+@keyframes flash {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+        text-shadow: none;
+    }   
+    56% {
+        opacity: 1;
+        visibility: visible;
+        text-shadow: 
+                    
+                    0 0 5px white, 
+                    0 0 8px white, 
+                    0 0 12px white, 
+                    0 0 17px white, 
+                    0 0 23px white, 
+                    0 0 30px white, 
+                    0 0 33px $color-disc-shadow, 
+                    0 0 37px $color-disc-shadow, 
+                    0 0 42px $color-disc-shadow, 
+                    0 0 48px $color-disc-shadow, 
+                    0 0 55px $color-disc-shadow, 
+                    0 0 63px $color-disc-shadow, 
+                    0 0 72px $color-disc-shadow, 
+                    0 0 82px $color-disc-shadow;
+    }
+    70% {
+        opacity: 1;
+        visibility: visible;
+        text-shadow: 
+                    
+                    0 0 5px white, 
+                    0 0 8px white, 
+                    0 0 12px white, 
+                    0 0 17px white, 
+                    0 0 23px white, 
+                    0 0 30px white, 
+                    0 0 33px $color-disc-shadow, 
+                    0 0 37px $color-disc-shadow, 
+                    0 0 42px $color-disc-shadow, 
+                    0 0 48px $color-disc-shadow, 
+                    0 0 55px $color-disc-shadow, 
+                    0 0 63px $color-disc-shadow, 
+                    0 0 72px $color-disc-shadow, 
+                    0 0 82px $color-disc-shadow;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+        text-shadow: 
+                    0 0 3px white, 
+                    0 0 5px white, 
+                    0 0 8px white, 
+                    0 0 10px $color-disc-shadow, 
+                    0 0 18px $color-disc-shadow, 
+                    0 0 20px $color-disc-shadow, 
+                    0 0 25px $color-disc-shadow, 
+                    0 0 38px $color-disc-shadow;
+    }
+}   
+
+////////////////////// MENU ////////////////
+.rotateRight {
+    background-color: #fff !important;
+    animation: rotateRight .35s ease-out 1;
+}
+.rotateLeft {
+    background-color: #000;
+    animation: rotateLeft .35s ease-out 1;
+}
+
+@keyframes rotateRight {
+    from {
+        opacity: .5;
+        transform: rotate(0deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(90deg);
+    }
+}
+
+@keyframes rotateLeft {
+    from {
+        opacity: .5;
+        transform: rotate(0deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotate(-90deg);
+    }
+}

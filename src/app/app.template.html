@@ -1,0 +1,48 @@
+
+<!-- <app-root> -->
+
+      <!-- preloader -->
+    <div class="preloader-wr" *ngIf="!isBrowser && isLoading">
+      <h1>Loading...</h1>
+    </div>
+
+    <!-- main part -->
+    <section class="main">
+
+      <div class="dashed-board"></div>
+      <div class="toggle-but"></div>
+
+      <div class="dark-layout" 
+          [class.isOpen]="drawer.opened"
+          (click)="customClose($event)"
+          >
+      </div>
+      <!-- left-menu button -->
+      <mat-drawer-container class="menu-container" autosize>
+          <mat-drawer #drawer class="menu-sidenav" mode="side">
+            <p>Auto-resizing sidenav</p>
+          </mat-drawer>
+      </mat-drawer-container>
+      <!-- open menu button -->
+      <div class="menu-sidenav-content"
+          [class.isOpen]="drawer.opened"
+      >
+        <div class="open-menu-button" 
+        (click)="drawer.toggle()" 
+        (mouseup)="initAnime()"
+        (contextmenu)="openMenu()"
+        >
+          <div class="cube"></div>
+          <div class="cube"></div>
+          <div class="cube"></div>
+          <div class="cube"></div>
+        </div>
+      </div>
+
+      <!-- vanilla-block -->
+      <app-vanilla *ngIf="isBrowser"></app-vanilla>
+
+      <!-- <img src="https://drive.google.com/uc?export=view&id=1KQxsdAN8H6thyKqyuqY6UlLdBpylCWkH" alt=""> -->
+    </section>
+
+<!-- </app-root> -->

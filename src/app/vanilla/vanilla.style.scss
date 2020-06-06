@@ -1,0 +1,85 @@
+@mixin centralize() {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+$param_disc-pink: 588px;
+$param_disc-dashed: 542px;
+$param_disc-light: 511px;
+
+app-vanilla {
+    .disc-pink {
+        top: -($param_disc-pink * .576);
+        left: 50%;
+        width: $param_disc-pink;
+        height: $param_disc-pink;
+        background-color: #fcedf7;
+        transform: translateX(-50%);
+        box-shadow: 0 0 75px rgba(181, 36, 36, .5);
+
+        @include centralize();
+        .disc-dashed {
+            width: $param_disc-dashed;
+            height: $param_disc-dashed;
+            border: 8px dashed $color-black;
+            
+            @include centralize();
+            .disc-light {
+                width: $param_disc-light;
+                height: $param_disc-light;
+                background-color: rgba(255, 255, 255, .65);
+                box-shadow: 0 0 20px rgba(181, 36, 36, .5);
+
+                @include centralize();
+                .disc-vanilla {
+                    position: relative;
+                    width: 466px;
+                    height: 466px;
+                    background-image: url('https://i.postimg.cc/XqHPdzqg/vanilla-full-sm.png');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    display: flex;
+                    align-items: flex-end;
+                    border-radius: 50%;
+                    // box-shadow: none;
+                    // animation: slice 1.35s ease-out 1;
+
+                    .info-wr {
+                        position: relative;
+                        width: 100%;
+                        height: 100px;
+                        margin-bottom: 24px;
+                        color: rgba(#fff, 1.25);
+                        line-height: 50px;
+                        text-align: center;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        visibility: hidden;
+                        // text-shadow: 
+                        //             0 0 5px white, 
+                        //             0 0 10px white, 
+                        //             0 0 15px white, 
+                        //             0 0 20px $color-disc-shadow, 
+                        //             0 0 35px $color-disc-shadow, 
+                        //             0 0 40px $color-disc-shadow, 
+                        //             0 0 50px $color-disc-shadow, 
+                        //             0 0 75px $color-disc-shadow;
+                        .info_auth {
+                            font-size: 32px;
+                            max-width: 330px;
+                        }
+                        .info_song-name {
+                            font-size: 21px;
+                            max-width: 250px;  
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

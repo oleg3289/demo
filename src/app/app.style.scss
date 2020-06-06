@@ -1,0 +1,106 @@
+$status-bar-width: 58px;
+
+app-root {
+    width: 100%;
+    height: 100%;
+    section.main {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        background-image: url('https://i.postimg.cc/DwVgHT9X/back-clouds.png'), 
+                          linear-gradient(165deg, $color-pink, $color-pink 25%, #fff 55%, #fff);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center top;
+        .dashed-board {
+            position: absolute;
+            top: 7px;
+            left: 0;
+            width: 100%;
+            border-top: 8px dashed $color-black;
+        }
+        mat-drawer-container.menu-container {
+            background: none;
+            mat-drawer.menu-sidenav {
+                background-color: transparent;
+                border-right: none;
+                width: 352px;
+                position: fixed;
+                padding-left: $width-status-bar;
+                .mat-drawer-inner-container {
+                    background-color: rgba(0, 0, 0, 0.6);
+                    margin-left: -$status-bar-width;
+                    padding: 68px 34px 68px 0px;
+                    padding-left: calc(#{$status-bar-width} + 34px);
+                    width: auto;
+                }
+            }
+            .mat-drawer-content {
+                position: fixed;
+                
+            }
+        }
+        .menu-sidenav-content {
+            position: fixed;
+            height: 100%;
+            width: $width-status-bar;
+            z-index: 1;
+            background-color: transparent !important;
+            display: flex;
+            align-items: center;
+            transition: background-color .11s ease-out;
+            &.isOpen {
+                background-color: rgba(0, 0, 0, 0.87) !important;
+            }
+            .open-menu-button {
+                position: fixed;
+                z-index: 2;
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                width: 36px;
+                height: 36px;
+                padding: 4px;
+                margin: 0 11px;
+                cursor: pointer;
+                transition: transform .09s ease-out;
+                &:active, &:focus {
+                    transform: scale(.79);
+                }
+                .cube {
+                    width: 12px;
+                    height: 12px;
+                    background-color: #000;
+                    transition: background-color .5s linear;
+                    &:nth-child(-n+2) {
+                        margin-bottom: 2px;
+                    }
+                }
+            }
+        }
+    }
+    .dark-layout {
+        position: absolute;
+        z-index: -999;
+        width: 100%;
+        height: 100%;
+        transition: background-color 0.11s linear;
+        &.isOpen {
+            background-color: rgba(0, 0, 0, 0.08);
+            z-index: 1;
+        }
+    }
+    .preloader-wr {
+        position: absolute;
+        z-index: 1000;
+        width: 100%;
+        height: 100%;
+        background-color: pink;
+        transition: visibility 0.325s linear;
+        &.hide {
+            z-index: -999;
+            display: none;
+            visibility: hidden;
+        }
+    }
+}

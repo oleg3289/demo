@@ -14,7 +14,7 @@ const router = express.Router();
 // The Express app is exported so that it can be used by serverless Functions.
 export async function app() {
   const server = express();
-  const distFolder = join(process.cwd(), 'dist/rare-lyrix/browser');
+  const distFolder = join(process.cwd(), 'dist/rare-lyrix');
   const indexHtml = existsSync(join(distFolder, 'index.original.html')) ? 'index.original.html' : 'index';
 
   const uri = "mongodb+srv://oleg3289:arxipelag4@rarelyrix-lltgv.mongodb.net/test?retryWrites=true&w=majority";

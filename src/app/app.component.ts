@@ -45,19 +45,19 @@ export class AppComponent implements OnInit, AfterViewInit {
     public ngOnInit(): void {
         this.cubeElems = this.elemRef.nativeElement.querySelectorAll('.cube');
 
-        // this.getData().subscribe(
-        //     (res) => console.log(res),
-        //     (err) => console.log(err)
-        // )
+        this.getData().subscribe(
+            (res) => console.log(res),
+            (err) => console.log(err)
+        )
     }
 
     ngAfterViewInit(): void {
         this.cdRef.detectChanges()
     }
 
-    // private getData(): Observable<any> {
-    //     return this.http.get<any>(`http://localhost:4000/songs`)
-    // }
+    private getData(): Observable<any> {
+        return this.http.get<any>(`http://localhost:4000/songs`)
+    }
 
     public initAnime(): void {
         if (!this.matDrawer.opened) {

@@ -11,13 +11,13 @@ import { HttpClientModule }    from '@angular/common/http';
 
 @NgModule({
     imports:      [ 
-        BrowserModule, 
+        BrowserModule.withServerTransition({appId: 'rare-lyrix'}), 
         FormsModule,
         VanillaModule,
         BrowserAnimationsModule,
         MatSidenavModule,
         RouterModule.forRoot(APP_ROUTING),
-        HttpClientModule   
+        HttpClientModule
     ],
     declarations: [ AppComponent ],
     bootstrap:    [ AppComponent ]

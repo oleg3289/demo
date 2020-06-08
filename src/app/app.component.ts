@@ -32,7 +32,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     ) {
         this.isBrowser = isPlatformBrowser(platformId);
         
-        this.router.events.subscribe(() => {
+        this.router.events.subscribe((event: any) => {
             if (event instanceof NavigationStart) {
                 this.isLoading = true;
             }
@@ -45,9 +45,10 @@ export class AppComponent implements OnInit, AfterViewInit {
     public ngOnInit(): void {
         this.cubeElems = this.elemRef.nativeElement.querySelectorAll('.cube');
 
-        this.getData().subscribe((res) => {
-            console.log(res)
-        })
+        this.getData().subscribe(
+            (res) => console.log(res),
+            (err) => console.log(err)
+        )
     }
 
     ngAfterViewInit(): void {
@@ -55,7 +56,7 @@ export class AppComponent implements OnInit, AfterViewInit {
     }
 
     private getData(): Observable<any> {
-        return this.http.get<any>('mongodb+srv://oleg3289:arxipelag4@rarelyrix-lltgv.mongodb.net/test?retryWrites=true&w=majority')
+        return this.http.get<any>(`http://localhost:4000/songs`)
     }
 
     public initAnime(): void {
